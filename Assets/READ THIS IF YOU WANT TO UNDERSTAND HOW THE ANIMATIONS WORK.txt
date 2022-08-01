@@ -1,0 +1,19 @@
+there are 4 animations: 
+
+"boing" "beforeboing1" "boing2" "beforeboing2" and an Idle that doesn't do much
+
+boing is her bouncing up and down on one side and boing2 is her bouncing up and down on the other
+("beforeboing1" "and "beforeboing2" are just still images to transition into the next animations)
+
+When you hit the first note it'll play "boing" and then the animator will automatically play 
+"beforeboing2" right after, then when you hit the second note it'll play "boing2"
+
+when "boing2" end it'll move onto "beforeboing1" to transition back and make a loop around
+
+the script for deleting the note's handles most of this with the exception of the unity animator
+
+-------------------------------------------------------------------------------------------------
+Also feel free to DM me if you have any more questions, I'm sure this is a lot to take at once but 
+it's  not as complicated as it seems, just feel free to mess around with the project until you feel
+like you know enough to encorporate it into Friday Night Fappin' :D
+-------------------------------------------------------------------------------------------------

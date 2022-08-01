@@ -13,11 +13,16 @@ public class DeleteNote : MonoBehaviour
   public AudioClip[] randomSounds;
   public AudioClip chosenSound;
 
+  // When something hits it (the only thing that can hit it is a note)
   public void OnCollisionEnter2D(Collision2D col)
   {
+    // Delete the note
     Destroy(col.gameObject);
-    audiosrc.PlayOneShot(chosenSound);
 
+    // Play random sound effect
+    audiosrc.PlayOneShot(chosenSound);
+    
+    // Switches between 2 different animations after hitting a note
     switch (whichClap)
     {
       case false:
@@ -29,11 +34,12 @@ public class DeleteNote : MonoBehaviour
        whichClap = false;
       break;
     }
-
+    
+    // Spawns a note
     Instantiate(notes, new Vector3(10, -2, 0), Quaternion.identity);
   }
 
-  // playing a random sound
+  // Chooses which of the sounds will be played
   private void Update()
   {
     chosenSound = randomSounds[Random.Range(0, randomSounds.Length)];

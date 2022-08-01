@@ -8,6 +8,7 @@ public class MovingArrow : MonoBehaviour
 
   private void Update()
   {
+    // All this does is move the note to the left
     rb.velocity = new Vector2(-Speed.speed, 0);
   }
 }
