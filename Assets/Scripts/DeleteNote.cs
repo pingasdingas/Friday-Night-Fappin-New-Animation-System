@@ -9,9 +9,14 @@ public class DeleteNote : MonoBehaviour
 
   public bool whichClap = false;
 
+  public AudioSource audiosrc;
+  public AudioClip[] randomSounds;
+  public AudioClip chosenSound;
+
   public void OnCollisionEnter2D(Collision2D col)
   {
     Destroy(col.gameObject);
+    audiosrc.PlayOneShot(chosenSound);
 
     switch (whichClap)
     {
@@ -26,5 +31,11 @@ public class DeleteNote : MonoBehaviour
     }
 
     Instantiate(notes, new Vector3(10, -2, 0), Quaternion.identity);
+  }
+
+  // playing a random sound
+  private void Update()
+  {
+    chosenSound = randomSounds[Random.Range(0, randomSounds.Length)];
   }
 }
